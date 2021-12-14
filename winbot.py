@@ -19,12 +19,13 @@ def getNamesList():
 
 cartella = os.path.dirname(os.path.realpath(__file__))
 driver = webdriver.Chrome(executable_path=cartella + '\chromedriver.exe')
-driver.get(cartella + "\index.html")
 while(True):
     time.sleep(2)
     print("Procedere? (Y/n)")
     ans = input()
     if(ans=='Y' or ans=='y'):
+        print("...\nATTENDERE\n...")
+        driver.get(cartella + "\index.html")
         getNamesList()
     else:
         print("Terminare? (Y/n)")
