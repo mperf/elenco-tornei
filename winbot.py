@@ -1,13 +1,7 @@
 import time
 import os
-from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.select import Select
 
 def getNamesList():
     classe = driver.find_element(By.XPATH, "/html/body/div[4]/div[1]/form/table/thead/tr[2]/td[2]/p[2]/span").text
