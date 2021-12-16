@@ -1,6 +1,9 @@
 from openpyxl import Workbook
 import glob
 import os
+from sys import stdin
+ 
+
 
 
 schools=['Caramuel','Castoldi','Roncalli']
@@ -14,17 +17,20 @@ for i in range(3):
     for j in range(len(myFilesPaths)):
       f=open(myFilesPaths[j], 'r')
       index=2
+      sheet["A1"] = "ALUNNI"
+      sheet["C1"] = "BASKET 3 vs 3"
+      sheet["D1"] = "PALLAVOLO MISTA"
+      sheet["E1"] = "CALCETTO"
+      for line in stdin:
+        print(line, end='')
       for line in f:
-        sheet["A1"] = "ALUNNI"
-        sheet["C1"] = "BASKET 3 vs 3"
-        sheet["D1"] = "PALLAVOLO MISTA"
-        sheet["E1"] = "CALCETTO"
         try:
           value='A'+str(index)
           sheet[value]=line
-        except:
+        except EOFError:
           break
-      workbook.save(filename="hello_world.xlsx")
+        index+=1
+      workbook.save(filename= myFilesPaths[j][-10:]+".xlsx")
 
 '''
 workbook = Workbook()
