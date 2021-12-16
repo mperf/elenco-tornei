@@ -16,7 +16,7 @@ def getNamesList():
             print("OPS " + classe)
 
 cartella = os.path.dirname(os.path.realpath(__file__))
-myFilesPaths = glob.glob(cartella + '\Roncalli\*.html')
+myFilesPaths = glob.glob(cartella + '\Castoldi\*.html')
 print(myFilesPaths)
 driver = webdriver.Chrome(executable_path=cartella + '\chromedriver.exe')
 for i in range(len(myFilesPaths)):
