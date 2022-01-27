@@ -23,7 +23,7 @@ for i in range(3):
         sheet = workbook.active
         sheet.column_dimensions['A'].width = 30
         sheet.column_dimensions['B'].width = 15
-        sheet.column_dimensions['C'].width = 15
+        sheet.column_dimensions['C'].width = 20
         sheet.column_dimensions['D'].width = 15
         index=2
         
